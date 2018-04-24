@@ -10,6 +10,12 @@ lines = line = lambda: get_terminal_size()[1]
 
 
 class Tri:
+    '''
+        Make your text with justificated paragraphe
+        left   -> -__
+        center -> _-_
+        right  -> __-
+    '''
     def __init__(self, now=''):
         self.now = now
 
@@ -17,6 +23,9 @@ class Tri:
         return self.now
 
     def put(self, text, parag='-__'):
+        '''
+            put text in object
+        '''
         length = len(text)
         if parag == '-__':
             if self.now == '':
@@ -41,4 +50,7 @@ class Tri:
                 self.now = self.now[:start] + text
 
     def show(self):
+        '''
+            same as print(<yourObject>)
+        '''
         print(self.now)
